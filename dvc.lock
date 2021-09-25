@@ -1,0 +1,18 @@
+schema: '2.0'
+stages:
+  convert-table:
+    cmd: python ./convert_to_table.py hydra.output_subdir=null hydra.run.dir=.
+    deps:
+    - path: ./configs/convert.yaml
+      md5: a36d9c6d83ee34b7aa97b79adfdbeb35
+      size: 79
+    - path: ./convert_to_table.py
+      md5: 8b91985d9c300e16a8afc1f499fe26cb
+      size: 1293
+    - path: ./data/raw/data.html
+      md5: 0b185794da45f183fc39d79a75967573
+      size: 9196
+    outs:
+    - path: ./data/all_data/data.csv
+      md5: 38bf1b58e8b63ff3d4102232a10bd28b
+      size: 2463

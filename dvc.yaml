@@ -1,0 +1,9 @@
+stages:
+  convert-table:
+    cmd: python ./convert_to_table.py hydra.output_subdir=null hydra.run.dir=.
+    deps:
+      - ./configs/convert.yaml
+      - ./convert_to_table.py
+      - ./data/raw/data.html
+    outs:
+      - ./data/all_data/data.csv
