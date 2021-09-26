@@ -4,8 +4,8 @@ dvc[gdrive]~=2.6
 scikit-learn~=1.0.0
 matplotlib~=3.4.0
 hydra-core~=1.1.0
-requests~=2.26
 pandas~=1.3
 statsmodels~=0.12.2
 Jinja2
 pandas-profiling[notebook]~=3.0.0
+mljar-supervised~=0.11
