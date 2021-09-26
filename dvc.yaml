@@ -1,0 +1,17 @@
+stages:
+  convert-table:
+    cmd: python ./convert_to_table.py hydra.output_subdir=null hydra.run.dir=.
+    deps:
+      - ./configs/convert.yaml
+      - ./convert_to_table.py
+      - ./data/raw/data.html
+    outs:
+      - ./data/all_data/data.csv
+  energy-report:
+    cmd: python ./energy_report.py hydra.output_subdir=null hydra.run.dir=.
+    deps:
+      - ./configs/eda_energy.yaml
+      - ./energy_report.py
+      - ./data/raw/TOP500_202106.csv
+    outs:
+      - ./data/all_data/energy_eda.html
