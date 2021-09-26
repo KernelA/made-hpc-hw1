@@ -16,3 +16,19 @@ stages:
     - path: ./data/all_data/data.csv
       md5: 38bf1b58e8b63ff3d4102232a10bd28b
       size: 2463
+  energy-report:
+    cmd: python ./energy_report.py hydra.output_subdir=null hydra.run.dir=.
+    deps:
+    - path: ./configs/eda_energy.yaml
+      md5: c98e4f7b93e324de6e2dd0b0b08d8dab
+      size: 94
+    - path: ./data/raw/TOP500_202106.csv
+      md5: 968f8056fbae0a5ec663b3d341277c1b
+      size: 199780
+    - path: ./energy_report.py
+      md5: f85adb5ff61b0115ee8a93f9bd8d6238
+      size: 483
+    outs:
+    - path: ./data/all_data/energy_eda.html
+      md5: 3a4ded359f807181de469e4867134caa
+      size: 6192938
