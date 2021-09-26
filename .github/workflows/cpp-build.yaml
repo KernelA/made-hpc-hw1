@@ -1,0 +1,31 @@
+name: c-cpp-autobuild
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+    branches: [master]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-20.04
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Install OpenMP
+        run: |
+          sudo apt update
+          sudo apt install libomp-dev -y
+
+      - name: "CMake Build"
+        uses: lukka/run-cmake@v3
+        with:
+          useVcpkgToolchainFile: false
+          buildDirectory: "${{ github.workspace }}/matmul/build"
+          cmakeListsTxtPath: "${{ github.workspace }}/matmul/CMakeLists.txt"
+          cmakeAppendedArgs: "-GNinja -DCMAKE_BUILD_TYPE=Release --parallel 2"
+
+      - name: "Run perfomance test"
+        run: "${{ github.workspace }}/matmul/build/matmul/matmul"
