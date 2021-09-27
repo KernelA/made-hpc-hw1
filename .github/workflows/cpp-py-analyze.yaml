@@ -30,11 +30,13 @@ jobs:
         languages: ${{ matrix.language }}
 
     - name: Install OpenMP
+      if: ${{ matrix.language == 'cpp' }}
       run: |
         sudo apt update
         sudo apt install libomp-dev -y
 
     - name: "CMake Build"
+      if: ${{ matrix.language == 'cpp' }}
       uses: lukka/run-cmake@v3
       with:
         useVcpkgToolchainFile: false
