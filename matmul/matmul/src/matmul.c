@@ -1,6 +1,7 @@
 #include <omp.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <time.h>
 #include <sys/time.h>
 
 const size_t N = 1024;
@@ -16,9 +17,9 @@ void ZeroMatrix(double* A, size_t N) {
 void RandomMatrix(double* A, size_t N) {
     srand(time(NULL));
 
-    for (int i = 0; i < N; i++) {
-        for (int j = 0; j < N; j++) {
-            A[i * N + j] = rand() / RAND_MAX;
+    for (size_t i = 0; i < N; i++) {
+        for (size_t j = 0; j < N; j++) {
+            A[i * N + j] = (double)rand() / RAND_MAX;
         }
     }
 }
@@ -114,12 +115,12 @@ double CalcMatMulTime_kij_openmp(double* A, double* B, double* C, size_t N) {
 
     gettimeofday(&start, NULL);
 
-#pragma omp parallel
-#pragma omp for collapse(3)
+    #pragma omp parallel
+    #pragma omp for collapse(3)
     for (size_t k = 0; k < N; k++)
         for (size_t i = 0; i < N; i++) {
             for (size_t j = 0; j < N; j++) {
-                C[i * N + j] = C[i * N + j] + A[i * N + k] * B[k * N + j];
+                C[i * N + j] += A[i * N + k] * B[k * N + j];
             }
         }
     gettimeofday(&end, NULL);
