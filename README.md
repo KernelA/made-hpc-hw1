@@ -44,4 +44,3 @@ dvc repro -P
 Сравнение результатов можно посмотреть [в логах GitHub Actions (стадия Run perfomance test)](https://github.com/KernelA/made-hpc-hw1/actions/workflows/cpp-build.yaml)
 
 Код содержится в [matmul](matmul).
-

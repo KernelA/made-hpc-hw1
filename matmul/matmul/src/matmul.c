@@ -114,8 +114,8 @@ double CalcMatMulTime_kij_openmp(double* A, double* B, double* C, size_t N) {
 
     gettimeofday(&start, NULL);
 
-#pragma omp parallel
-#pragma omp for collapse(3)
+    #pragma omp parallel
+    #pragma omp for collapse(3)
     for (size_t k = 0; k < N; k++)
         for (size_t i = 0; i < N; i++) {
             for (size_t j = 0; j < N; j++) {
