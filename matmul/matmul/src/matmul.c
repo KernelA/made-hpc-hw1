@@ -119,7 +119,7 @@ double CalcMatMulTime_kij_openmp(double* A, double* B, double* C, size_t N) {
     for (size_t k = 0; k < N; k++)
         for (size_t i = 0; i < N; i++) {
             for (size_t j = 0; j < N; j++) {
-                C[i * N + j] = C[i * N + j] + A[i * N + k] * B[k * N + j];
+                C[i * N + j] += A[i * N + k] * B[k * N + j];
             }
         }
     gettimeofday(&end, NULL);
