@@ -1,7 +1,8 @@
 #include <omp.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include <time.h> 
+#include <time.h>
+#include <sys/time.h>
 
 const size_t N = 1024;
 
