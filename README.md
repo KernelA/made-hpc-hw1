@@ -28,13 +28,13 @@ dvc repro -P
 
 [![nbviewer](https://raw.githubusercontent.com/jupyter/design/master/logos/Badges/nbviewer_badge.svg)](https://nbviewer.jupyter.org/github/KernelA/made-hpc-hw1/blob/master/perf_pred.ipynb)
 
-Открыть [perf_pred.ipynb](perf_pred.ipynb)
+Открыть [perf_pred.ipynb](perf_pred.ipynb). Можно открыть отрендеренный Notebook перейдя по ссылке из `nbviewer logo` выше.
 
 ### Оценка потребляемого электричества суперкомпьютерами относительно производимого электричества в мире
 
 [![nbviewer](https://raw.githubusercontent.com/jupyter/design/master/logos/Badges/nbviewer_badge.svg)](https://nbviewer.jupyter.org/github/KernelA/made-hpc-hw1/blob/master/energy_estimation.ipynb)
 
-Открыть [energy_estimation.ipynb](energy_estimation.ipynb)
+Открыть [energy_estimation.ipynb](energy_estimation.ipynb). Можно открыть отрендеренный Notebook перейдя по ссылке из `nbviewer logo` выше.
 
 
 ### Улучшение программы для перемножения матриц
